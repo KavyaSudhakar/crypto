@@ -18,6 +18,16 @@
         <li><a href="/">HOME</a></li>
         <li><a href="home/about">ABOUT US</a></li>
         <li><a href="home/lookup">LOOKUP</a></li>
+        
+         <% if user_signed_in? %>
+             <li><a href="/users/sign_in", method: delete >LOGOUT</a></li>
+             <li><a href="/users/edit">EDIT PROFILE</a></li>
+
+         <% else%>
+             <li><a href="/users/sign_up">SIGNUP</a></li>
+             <li><a href="/users/sign_in">LOGIN</a></li>
+        <% end%>
+       
           </ul>
         </li>
       </ul>
