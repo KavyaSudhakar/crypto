@@ -20,7 +20,7 @@
         <li><a href="home/lookup">LOOKUP</a></li>
         
          <% if user_signed_in? %>
-             <li><a href="/users/sign_in", method: delete >LOGOUT</a></li>
+             <li><a href="/users/sign_out", method: :delete >LOGOUT</a></li>
              <li><a href="/users/edit">EDIT PROFILE</a></li>
 
          <% else%>
