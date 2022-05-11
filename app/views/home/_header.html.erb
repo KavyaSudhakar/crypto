@@ -1,4 +1,5 @@
- <nav class="navbar navbar-default">
+
+<nav class="navbar navbar-dark bg-success">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -17,12 +18,14 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/">HOME</a></li>
         <li><a href="home/about">ABOUT US</a></li>
-        <li><a href="home/lookup">LOOKUP</a></li>
+        <li><a href="home/lookup">SEARCH</a></li>
         
          <% if user_signed_in? %>
-             <li><a href="/users/sign_out", method: :delete >LOGOUT</a></li>
-             <li><a href="/users/edit">EDIT PROFILE</a></li>
-
+            <li><a href="/users/edit">EDIT PROFILE</a></li>
+             
+             <li><a href="/portfolios">CRYPTO CURRENCY</a></li> 
+             <li><%= button_to "LOG OUT",destroy_user_session_path, method: :delete%></li>
+            
          <% else%>
              <li><a href="/users/sign_up">SIGNUP</a></li>
              <li><a href="/users/sign_in">LOGIN</a></li>

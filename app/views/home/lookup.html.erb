@@ -3,7 +3,7 @@
 
 <%=form_tag home_lookup_path, :method=> 'get' do %>
    <%= text_field_tag 'sym', nil, placeholder: 'Enter crypto Symbol' , size: 50 %>
-   <%= submit_tag 'Lookup stock Quote' %>
+   <%= submit_tag 'SEARCH',class: "btn btn-success" %>
 <%end%>
 
 <br/><br/>
@@ -14,8 +14,10 @@
 <% for x in $lookup_coin %>
     
          <% if $symbol==x["symbol"] %>
-             <%= x["name"] %> : <%= x["price"] %> <br/>
-             RANK:<%= x["rank"] %><br/><br/>
+              :<%= x["name"] %><br/>
+              PRICE:<%= x["price"] %> <br/>
+              MARKET CAP:<%= x["market_cap"] %> <br/>
+              RANK:<%= x["rank"] %><br/><br/>
             <%end%>
     <%end%>
 <%end%>

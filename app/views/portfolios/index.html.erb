@@ -1,0 +1,61 @@
+<h1>Crypto Currency</h1>
+<br/>
+  
+<table class="table table-bordered table-stripped">
+   <thead>
+     <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Total value</th>
+      <th>Total Paid</th>
+      <th>PROFIT/LOSS</th>
+      <th>Symbol</th>
+      <th>Cost paid</th>
+      <th>Amount owned</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portfolios.each do |portfolio| %>
+      <% if portfolio.symbol %>
+         <% portfolio.symbol = portfolio.symbol.upcase %>
+      <% end %>
+         <tr>
+          <% for x in $lookup_portfolio%>
+            <% if portfolio.symbol==x["symbol"] %>
+             <td><%= link_to x["name"], portfolio %></td>
+             <td><%= x["price"]%></td>
+             <td><%= x["price"].to_d *  portfolio.amount_owned %></td>
+             <td><%= portfolio.cost_per*portfolio.amount_owned%></td>
+             <td><%= (x["price"].to_d *  portfolio.amount_owned)-(portfolio.cost_per*portfolio.amount_owned) %></td>
+            <%end%>
+          <%end%>
+           <td><%= portfolio.symbol %></td>
+          
+           <td><%= portfolio.cost_per %></td>
+           <td><%= portfolio.amount_owned %></td>
+           
+           
+          </tr>
+        <% end %>
+      
+  </tbody>
+</table> 
+
+
+
+<%= link_to "CREATE CRYPTO",new_portfolio_path, class: "btn btn-success"%>
+
+
+
+
+
+
+
+
+
+
+
+
+

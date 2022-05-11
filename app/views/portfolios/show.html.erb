@@ -1,0 +1,11 @@
+
+
+<%= render @portfolio %>
+
+<div>
+  <%= link_to "EDIT", edit_portfolio_path(@portfolio) %> |
+  <%= link_to "BACK", portfolios_path %>
+<br/>
+  <%= button_to "DELETE", @portfolio, method: :delete, class: "btn btn-danger" %>
+</div>
+

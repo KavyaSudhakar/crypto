@@ -1,5 +1,6 @@
-<h1>Home</h1>
+<h1>CRYPTO CURRENCY</h1>
 
+ 
 <br/><br/>
 
 <% $coins %>
@@ -7,8 +8,10 @@
 <% for x in $coins %>
     <%for coin in $my_coins %>
          <% if coin==x["symbol"] %>
-             <%= x["name"] %> : <%= x["price"] %> <br/>
-             RANK:<%= x["rank"] %><br/><br/>
+             Name:<%= x["name"] %> <br/>
+             Symbol:<%= x["symbol"] %><br/>
+             Price:<%= x["price"] %> <br/>
+             Rank:<%= x["rank"] %><br/><br/>
             <%end%>
     <%end%>
 <%end%>
