@@ -20,6 +20,7 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'rubocop', '~> 1.29', '>= 1.29.1'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

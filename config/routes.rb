@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
     resource :user
 
-  get 'home/about'
+  get 'about', to: 'home#about'
   get 'home/lookup'
   get "home/lookup" => 'home#lookup'
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
